@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticiero Deportes - Voleibol</title>
+    <style>
+        /* Estilos base mejorados */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        /* Header estilo deportivo */
+        header {
+            background-color: #1a1a2e;
+            color: #fff;
+            padding: 25px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-bottom: 3px solid #e63946;
+            position: relative;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Navegación mejorada */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #16213e;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: #4cc9f0;
+            background: rgba(76, 201, 240, 0.1);
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #4cc9f0;
+            transition: width 0.3s;
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        /* Contenido principal estilo deportivo */
+        .contenido-principal {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 25px;
+        }
+        
+        .seccion-voleibol {
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .seccion-voleibol:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .seccion-contenido {
+            padding: 25px;
+        }
+        
+        .seccion-voleibol h2 {
+            color: #1a1a2e;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.3;
+            border-bottom: 2px solid #e63946;
+            padding-bottom: 10px;
+        }
+        
+        .seccion-voleibol p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #555;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .seccion-voleibol p:before {
+            content: "🏐";
+            position: absolute;
+            left: 0;
+        }
+        
+        .resultado {
+            font-weight: 600;
+            color: #1a1a2e;
+            background-color: rgba(230, 57, 70, 0.1);
+            padding: 8px 12px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        
+        .destacado {
+            background-color: rgba(230, 57, 70, 0.1);
+            padding: 15px;
+            border-left: 3px solid #e63946;
+            margin: 20px 0;
+            font-weight: 500;
+            border-radius: 4px;
+        }
+        
+        /* Footer profesional */
+        footer {
+            background-color: #1a1a2e;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 3px solid #e63946;
+        }
+        
+        footer h4 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        
+        footer p {
+            color: #a8dadc;
+            font-size: 1em;
+            margin-bottom: 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            nav {
+                flex-wrap: wrap;
+                padding: 10px 0;
+            }
+            
+            nav a {
+                margin: 5px 10px;
+                font-size: 0.8em;
+                padding: 6px 12px;
+            }
+            
+            .contenido-principal {
+                grid-template-columns: 1fr;
+                padding: 0 15px;
+            }
+            
+            .seccion-contenido {
+                padding: 20px;
+            }
+            
+            .seccion-voleibol h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sección de Voleibol</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="deportes.html">Deportes</a>
+        <a href="novedades.html">Novedades</a>
+        <a href="tendencias.html">Tendencias</a>
+        <a href="ultima hora.html">Última Hora</a>             
+        <a href="mas relevante.html">Más Relevante</a>
+    </nav>
+    
+    <div class="contenido-principal">
+        <article class="seccion-voleibol">
+            <div class="seccion-contenido">
+                <h2>Resultados Recientes</h2>
+                <p><span class="resultado">Brasil 3 - 1 Italia</span>: Partido emocionante en la Liga Mundial con gran actuación del brasileño Alan Souza.</p>
+                <p><span class="resultado">Estados Unidos 2 - 3 Polonia</span>: Victoria polaca en un encuentro de cinco sets que duró más de 2 horas.</p>
+                
+                <div class="destacado">
+                    La selección femenina de Turquía se corona campeona del Grand Prix tras vencer a Brasil en la final por 3-2.
+                </div>
+                
+                <p><span class="resultado">Japón 3 - 0 Argentina</span>: Dominio total del equipo asiático en el Campeonato Asiático.</p>
+            </div>
+        </article>
+
+        <article class="seccion-voleibol">
+            <div class="seccion-contenido">
+                <h2>Noticias Destacadas</h2>
+                <p>¡Brasil domina la Liga Mundial con una actuación impresionante de su capitán Bruno Rezende!</p>
+                
+                <div class="destacado">
+                    Paola Egonu, estrella del voleibol italiano, firma un contrato récord con el club JT Marvelous de la liga profesional de Japón.
+                </div>
+                
+                <p>La FIVB anuncia cambios en el formato de competencia para la próxima temporada, incluyendo nuevos torneos continentales.</p>
+                
+                <p>El cubano Robertlandy Simón es nombrado mejor bloqueador del año por tercera temporada consecutiva.</p>
+            </div>
+        </article>
+        
+        <article class="seccion-voleibol">
+            <div class="seccion-contenido">
+                <h2>Próximos Eventos</h2>
+                <p>15-20 Octubre: Campeonato Mundial Femenino en Bangkok, Tailandia</p>
+                <p>22-28 Octubre: Liga de Naciones Masculina - Fase Final en Katowice, Polonia</p>
+                <p>5-10 Noviembre: Grand Prix Femenino en Río de Janeiro, Brasil</p>
+            </div>
+        </article>
+        
+        <article class="seccion-voleibol">
+            <div class="seccion-contenido">
+                <h2>Entrevista Exclusiva</h2>
+                <p>"El voleibol peruano está en reconstrucción pero viene fuerte", afirma Natalia Málaga en entrevista exclusiva.</p>
+                
+                <div class="destacado">
+                    Wilfredo León habla sobre su recuperación: "Volveré más fuerte que nunca para la próxima temporada".
+                </div>
+                
+                <p>La nueva generación de jugadores argentinos promete dar batalla en los próximos torneos internacionales.</p>
+            </div>
+        </article>
+    </div>
+    
+    <footer>
+        <h4>© 2025 Noticiero de Deportes - Todos los derechos reservados</h4>
+        <p>CONTACTANOS AL notideport@gmail.com - 4464258678</p>
+    </footer>
+</body>
+</html>

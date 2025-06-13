@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fútbol - Noticiero Deportes</title>
+    <style>
+        /* Estilos base mejorados */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        /* Header estilo periodístico */
+        header {
+            background-color: #1a1a2e;
+            color: #fff;
+            padding: 25px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-bottom: 3px solid #e63946;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: slideIn 1s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* Navegación mejorada */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #16213e;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.95em;
+            letter-spacing: 0.5px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: #4cc9f0;
+            background: rgba(76, 201, 240, 0.1);
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #4cc9f0;
+            transition: width 0.3s;
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        /* Contenido principal estilo periodístico */
+        .contenido-principal {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .noticia-destacada {
+            background-color: #fff;
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #e63946;
+        }
+        
+        .noticia-destacada h2 {
+            color: #1a1a2e;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .noticia-destacada p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #333;
+        }
+        
+        .noticia-destacada p:first-of-type {
+            font-weight: 500;
+            color: #444;
+        }
+        
+        /* Separador estilizado */
+        .separador {
+            border-top: 1px solid #ddd;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .separador:after {
+            content: "⚽";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #f5f5f5;
+            padding: 0 15px;
+            color: #e63946;
+            font-size: 1.5em;
+        }
+        
+        /* Footer profesional */
+        footer {
+            background-color: #1a1a2e;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 3px solid #e63946;
+        }
+        
+        footer h4 {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        
+        footer p {
+            color: #a8dadc;
+            font-size: 1em;
+            margin-bottom: 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            nav {
+                flex-wrap: wrap;
+                padding: 10px 0;
+            }
+            
+            nav a {
+                margin: 5px 10px;
+                font-size: 0.85em;
+                padding: 5px 10px;
+            }
+            
+            .noticia-destacada {
+                padding: 20px;
+            }
+            
+            .noticia-destacada h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fútbol</h1>
+    </header>
+    
+    <nav>
+        <a href="Index.html">Inicio</a>
+        <a href="deportes.html">Deportes</a>
+        <a href="novedades.html">Novedades</a>
+        <a href="tendencias.html">Tendencias</a>
+        <a href="ultima hora.html">Última Hora</a>             
+        <a href="mas relevante.html">Más Relevante</a>
+    </nav>
+    
+    <div class="contenido-principal">
+        <article class="noticia-destacada">
+            <h2>Álvaro Benito analiza la lucha por LaLiga entre Real Madrid y FC Barcelona</h2>
+            <p>El FC Barcelona lidera LaLiga con 66 puntos tras vencer al Girona, mientras que el Real Madrid le sigue de cerca, a solo tres puntos de distancia. Álvaro Benito y Rafa Alkorta han analizado las fortalezas de ambos equipos en la lucha por el título liguero.</p>
+            <p>Destacan la vocación ofensiva del Barcelona y su capacidad para generar movimientos difíciles de defender, liderados por Robert Lewandowski. Por otro lado, el Real Madrid es conocido por su regularidad y capacidad para ganar partidos, convirtiéndose en un equipo difícil de derrotar. El mes de abril será crucial para determinar quién se llevará el título final.</p>
+            
+            <div class="separador"></div>
+            
+            <h2>Chelsea FC reporta beneficios antes de impuestos de 128,4 millones de libras</h2>
+            <p>El Chelsea FC ha anunciado beneficios antes de impuestos (más de 153 millones de euros) para el ejercicio que terminó en Junio de 2024, un contraste significativo con las pérdidas de 200 millones de euros del año anterior.</p>
+            <p>Un factor clave en estos resultados ha sido la venta del equipo femenino del Chelsea, que se reestructuró para funcionar como una entidad separada, generando "beneficios por enajenación de filiales" valorados en cerca de 200 millones de libras por la "venta de registros de jugadores" y aumentos en ingresos por partidos y comerciales.</p>
+            <p>Mientras la Premier League ha considerado esta estrategia dentro de su normativa, la UEFA, con reglas más estrictas, podría evaluar medidas adicionales. La clasificación para la próxima Champions League es crucial para mantener la estabilidad financiera del club.</p>
+            
+            <div class="separador"></div>
+            
+            <h2>Manchester City continúa su dominio en la Premier League</h2>
+            <p>El Manchester City sigue demostrando su hegemonía en la Premier League inglesa, manteniendo una racha imparable que lo consolida como uno de los equipos más dominantes de Europa en los últimos años.</p>
+        </article>
+    </div>
+    
+    <footer>
+        <h4>© 2025 Noticiero de Deportes - Todos los derechos reservados</h4>
+        <p>CONTACTANOS AL notideport@gmail.com - 4464258678</p>
+    </footer>
+</body>
+</html>

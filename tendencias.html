@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tendencias - Noticiero Deportes</title>
+    <style>
+        /* Estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        /* Header */
+        header {
+            background-color: #1a1a2e;
+            color: #fff;
+            padding: 25px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-bottom: 3px solid #e63946;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Navegación */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #16213e;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #4cc9f0;
+            background: rgba(76, 201, 240, 0.1);
+        }
+        
+        nav a.active {
+            background-color: rgba(76, 201, 240, 0.2);
+        }
+        
+        /* Contenido principal */
+        .contenido-principal {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .noticia {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .noticia:hover {
+            transform: translateY(-5px);
+        }
+        
+        .noticia-contenido {
+            padding: 20px;
+        }
+        
+        .noticia h2 {
+            color: #1a1a2e;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            border-bottom: 2px solid #e63946;
+            padding-bottom: 10px;
+        }
+        
+        .noticia p {
+            margin-bottom: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .etiqueta {
+            display: inline-block;
+            background-color: #e63946;
+            color: white;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 3px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a2e;
+            color: #fff;
+            padding: 25px 0;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 3px solid #e63946;
+        }
+        
+        footer h4 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        footer p {
+            color: #a8dadc;
+            font-size: 1rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            nav {
+                flex-wrap: wrap;
+                padding: 10px 0;
+            }
+            
+            nav a {
+                margin: 5px 10px;
+                font-size: 0.8rem;
+                padding: 8px 12px;
+            }
+            
+            .contenido-principal {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tendencias Deportivas</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="deportes.html">Deportes</a>
+        <a href="novedades.html">Novedades</a>
+        <a href="tendencias.html">Tendencias</a>
+        <a href="ultima hora.html">Última Hora</a>
+        <a href="mas relevante.html">Más Relevante</a>
+    </nav>
+    
+    <main class="contenido-principal">
+        <article class="noticia">
+            <div class="noticia-contenido">
+                <span class="etiqueta">Fútbol</span>
+                <h2>Real Madrid ficha joven estrella brasileña</h2>
+                <p>El club merengue anuncia el fichaje millonario del talento de 19 años que destacó en el último campeonato sudamericano.</p>
+            </div>
+        </article>
+
+        <article class="noticia">
+            <div class="noticia-contenido">
+                <span class="etiqueta">Básquetbol</span>
+                <h2>Stephen Curry lidera a los Warriors</h2>
+                <p>El base anotó 45 puntos incluyendo 10 triples en la victoria 112-108 sobre los Celtics.</p>
+            </div>
+        </article>
+
+        <article class="noticia">
+            <div class="noticia-contenido">
+                <span class="etiqueta">Béisbol</span>
+                <h2>Yankees vs Dodgers: duelo épico</h2>
+                <p>Partido que terminó en extra innings con victoria 7-6 para los Yankees, con dos home runs de Aaron Judge.</p>
+            </div>
+        </article>
+
+        <article class="noticia">
+            <div class="noticia-contenido">
+                <span class="etiqueta">Boxeo</span>
+                <h2>Canelo vs Benavidez confirmado</h2>
+                <p>El combate por el título mundial será el 4 de mayo en el T-Mobile Arena de Las Vegas.</p>
+            </div>
+        </article>
+        
+        <article class="noticia">
+            <div class="noticia-contenido">
+                <span class="etiqueta">Tenis</span>
+                <h2>Nueva generación en Australia</h2>
+                <p>Tres de los cuatro semifinalistas del Abierto de Australia son menores de 25 años.</p>
+            </div>
+        </article>
+        
+        <article class="noticia">
+            <div class="noticia-contenido">
+                <span class="etiqueta">Fórmula 1</span>
+                <h2>Nuevas reglas para 2025</h2>
+                <p>La FIA anuncia cambios en el reglamento técnico para mejorar la competitividad.</p>
+            </div>
+        </article>
+    </main>
+    
+    <footer>
+        <h4>© 2025 Noticiero de Deportes</h4>
+        <p>Contacto: notideport@gmail.com | Tel: 446-425-8678</p>
+    </footer>
+</body>
+</html>

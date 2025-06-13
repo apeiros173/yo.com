@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección de Deportes - Noticiero Deportes</title>
+    <style>
+        /* Estilos base mejorados */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        /* Header estilo periodístico */
+        header {
+            background-color: #1a1a2e;
+            color: #fff;
+            padding: 25px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-bottom: 3px solid #e63946;
+            position: relative;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Navegación mejorada */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #16213e;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav a, .dropdown button {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        nav a:hover, .dropdown:hover button {
+            color: #4cc9f0;
+            background: rgba(76, 201, 240, 0.1);
+        }
+        
+        nav a:after, .dropdown button:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #4cc9f0;
+            transition: width 0.3s;
+        }
+        
+        nav a:hover:after, .dropdown:hover button:after {
+            width: 100%;
+        }
+        
+        /* Menú desplegable mejorado */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #16213e;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 0 0 4px 4px;
+            overflow: hidden;
+        }
+        
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            display: block;
+            text-align: left;
+            text-transform: capitalize;
+            font-weight: normal;
+            transition: all 0.3s;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .dropdown-content a:hover {
+            background-color: rgba(76, 201, 240, 0.2);
+            color: #4cc9f0;
+            padding-left: 20px;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        /* Contenido principal estilo periodístico */
+        .contenido {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .noticia {
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .noticia:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .noticia-contenido {
+            padding: 25px;
+        }
+        
+        .noticia h2 {
+            color: #1a1a2e;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.3;
+            border-bottom: 2px solid #e63946;
+            padding-bottom: 10px;
+        }
+        
+        .noticia p {
+            margin-bottom: 0;
+            font-size: 1em;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .etiqueta {
+            display: inline-block;
+            background-color: #e63946;
+            color: white;
+            padding: 4px 10px;
+            font-size: 0.8em;
+            font-weight: bold;
+            border-radius: 3px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        /* Footer profesional */
+        footer {
+            background-color: #1a1a2e;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 3px solid #e63946;
+        }
+        
+        footer h4 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        
+        footer p {
+            color: #a8dadc;
+            font-size: 1em;
+            margin-bottom: 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            nav {
+                flex-wrap: wrap;
+                padding: 10px 0;
+            }
+            
+            nav a, .dropdown button {
+                margin: 5px 10px;
+                font-size: 0.8em;
+                padding: 6px 12px;
+            }
+            
+            .contenido {
+                grid-template-columns: 1fr;
+                padding: 0 15px;
+            }
+            
+            .dropdown-content {
+                min-width: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sección de Deportes</h1>
+    </header>
+    
+    <nav>
+        <a href="Index.html">Inicio</a>
+        <div class="dropdown">
+            <button>Deportes</button>
+            <div class="dropdown-content">
+                <a href="futbol.html">Fútbol</a>
+                <a href="basquetbol.html">Básquetbol</a>
+                <a href="beisbol.html">Béisbol</a>
+                <a href="voleibol.html">Vóleibol</a>
+                <a href="boxeo.html">Box</a>
+            </div>
+        </div>
+        <a href="novedades.html">Novedades</a>
+        <a href="tendencias.html">Tendencias</a>
+        <a href="ultima hora.html">Última Hora</a>
+        <a href="mas relevante.html">Más Relevante</a>
+    </nav>
+    
+    <section class="contenido">
+        <article class="noticia">
+            <div class="noticia-contenido">
+                <span class="etiqueta">Fútbol</span>
+                <h2>Resultados de la jornada</h2>
+                <p>Revive los momentos más emocionantes de la última fecha de la liga, con análisis detallados de cada encuentro y las posiciones actualizadas en la tabla.</p>
+            </div>
+        </article>
+        
+        <article class="noticia">
+            <div class="noticia-contenido">
+                <span class="etiqueta">Tenis</span>
+                <h2>Novak Djokovic hace historia</h2>
+                <p>Djokovic gana su 24° Grand Slam y rompe otro récord más en un partido épico que duró más de 4 horas ante su principal rival.</p>
+            </div>
+        </article>
+        
+        <article class="noticia">
+            <div class="noticia-contenido">
+                <span class="etiqueta">Fórmula 1</span>
+                <h2>Verstappen domina la temporada</h2>
+                <p>El piloto de Red Bull sigue imparable y se lleva otra victoria en el Gran Premio, aumentando su ventaja en el campeonato mundial.</p>
+            </div>
+        </article>
+        
+        <article class="noticia">
+            <div class="noticia-contenido">
+                <span class="etiqueta">Básquetbol</span>
+                <h2>La NBA se prepara para los playoffs</h2>
+                <p>Las últimas jornadas de la temporada regular definen los últimos clasificados a la postemporada más emocionante del baloncesto mundial.</p>
+            </div>
+        </article>
+        
+        <article class="noticia">
+            <div class="noticia-contenido">
+                <span class="etiqueta">Béisbol</span>
+                <h2>Temporada MLB en su punto álgido</h2>
+                <p>Los equipos se disputan la supremacía en ambas ligas con miras a la serie mundial que se avecina en los próximos meses.</p>
+            </div>
+        </article>
+        
+        <article class="noticia">
+            <div class="noticia-contenido">
+                <span class="etiqueta">Box</span>
+                <h2>Gran pelea mundial anunciada</h2>
+                <p>Los campeones de tres categorías diferentes se enfrentarán en un combate que promete ser histórico para el boxeo profesional.</p>
+            </div>
+        </article>
+    </section>
+    
+    <footer>
+        <h4>© 2025 Noticiero de Deportes - Todos los derechos reservados</h4>
+        <p>CONTACTANOS AL notideport@gmail.com - 4464258678</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novedades - Noticiero Deportes</title>
+    <style>
+        /* Estilos base mejorados */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        /* Header estilo deportivo */
+        header {
+            background-color: #6c0f6f;
+            color: #fff;
+            padding: 25px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-bottom: 3px solid #4a0d4b;
+            position: relative;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Navegación mejorada */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #4a0d4b;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: #d8bfd8;
+            background: rgba(216, 191, 216, 0.1);
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #d8bfd8;
+            transition: width 0.3s;
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        /* Contenido principal estilo periodístico */
+        .contenido-principal {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .novedad {
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .novedad:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .novedad-contenido {
+            padding: 25px;
+        }
+        
+        .novedad h2 {
+            color: #6c0f6f;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.3;
+            border-bottom: 2px solid #d8bfd8;
+            padding-bottom: 10px;
+        }
+        
+        .novedad p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .imagen-novedad {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto 20px;
+            border-radius: 4px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .destacado {
+            background-color: rgba(108, 15, 111, 0.1);
+            padding: 15px;
+            border-left: 3px solid #6c0f6f;
+            margin: 20px 0;
+            font-weight: 500;
+            border-radius: 4px;
+        }
+        
+        /* Footer profesional */
+        footer {
+            background-color: #4a0d4b;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 3px solid #6c0f6f;
+        }
+        
+        footer h4 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        
+        footer p {
+            color: #d8bfd8;
+            font-size: 1em;
+            margin-bottom: 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            nav {
+                flex-wrap: wrap;
+                padding: 10px 0;
+            }
+            
+            nav a {
+                margin: 5px 10px;
+                font-size: 0.8em;
+                padding: 6px 12px;
+            }
+            
+            .contenido-principal {
+                grid-template-columns: 1fr;
+                padding: 0 15px;
+            }
+            
+            .novedad-contenido {
+                padding: 20px;
+            }
+            
+            .novedad h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Novedades - Noticiero de Deportes</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="deportes.html">Deportes</a>
+        <a href="novedades.html">Novedades</a>
+        <a href="tendencias.html">Tendencias</a>
+        <a href="ultima hora.html">Última Hora</a>             
+        <a href="mas relevante.html">Más Relevante</a>
+    </nav>
+    
+    <div class="contenido-principal">
+        <article class="novedad">
+            <div class="novedad-contenido">
+                <h2>Thomas Müller podría dejar el Bayern de Munich al finalizar la temporada</h2>
+                <img src="F:\Inicio\imagenes\novedadfutbol.jpeg" alt="Thomas Müller del Bayern Munich" class="imagen-novedad">
+                
+                <div class="destacado">
+                    El emblemático jugador del Bayern Munich podría no renovar su contrato al finalizar la temporada, según fuentes cercanas al club.
+                </div>
+                
+                <p>Thomas Müller, uno de los jugadores más icónicos del Bayern Munich en la última década, estaría considerando no renovar su contrato con el club bávaro cuando finalice la temporada actual. Aunque el delantero alemán preferiría extender su vínculo con el equipo donde ha desarrollado toda su carrera, la directiva estaría evaluando ofrecerle un rol más representativo dentro de la institución.</p>
+                
+                <p>Fuentes cercanas al club indican que la Major League Soccer (MLS) de Estados Unidos podría ser una opción atractiva para Müller si decide continuar su carrera fuera de Alemania. El jugador de 34 años sigue manteniendo un buen nivel físico y su experiencia sería valiosa para cualquier equipo.</p>
+                
+                <p>Müller ha sido pieza clave en el Bayern durante más de 15 años, ganando múltiples Bundesligas, Copas de Alemania y dos Champions League. Su posible salida marcaría el fin de una era para el club muniqués.</p>
+            </div>
+        </article>
+
+        <article class="novedad">
+            <div class="novedad-contenido">
+                <h2>Calendario de Competiciones 2024</h2>
+                
+                <div class="destacado">
+                    La FIFA anuncia las fechas oficiales para los próximos torneos internacionales, incluyendo la Copa Mundial de Clubes 2025.
+                </div>
+                
+                <p>La Federación Internacional de Fútbol Asociación (FIFA) ha publicado el calendario oficial de competiciones para el próximo año, destacando varios eventos importantes:</p>
+                
+                <p><strong>Copa América:</strong> 20 junio - 14 julio 2024 (Estados Unidos)</p>
+                <p><strong>Eurocopa:</strong> 14 junio - 14 julio 2024 (Alemania)</p>
+                <p><strong>Juegos Olímpicos:</strong> 26 julio - 11 agosto 2024 (París, Francia)</p>
+                <p><strong>Copa Mundial de Clubes:</strong> 1-15 diciembre 2024 (Estados Unidos)</p>
+                
+                <p>Además, se confirmaron las fechas para las eliminatorias mundialistas en todas las confederaciones, con partidos clave que definirán los clasificados a la Copa Mundial 2026.</p>
+            </div>
+        </article>
+        
+        <article class="novedad">
+            <div class="novedad-contenido">
+                <h2>Avances Tecnológicos en el Deporte</h2>
+                
+                <div class="destacado">
+                    La inteligencia artificial y el análisis de datos están revolucionando la forma en que los atletas entrenan y compiten.
+                </div>
+                
+                <p>Los últimos avances tecnológicos están transformando radicalmente el mundo del deporte profesional. Entre las innovaciones más destacadas se encuentran:</p>
+                
+                <p><strong>Análisis de rendimiento en tiempo real:</strong> Sensores portátiles y sistemas de seguimiento proporcionan datos instantáneos sobre el rendimiento de los atletas durante los entrenamientos y competiciones.</p>
+                
+                <p><strong>Realidad virtual para entrenamiento:</strong> Muchos equipos están utilizando simulaciones VR para preparar a sus jugadores para situaciones específicas de juego sin el desgaste físico de los entrenamientos tradicionales.</p>
+                
+                <p><strong>Prevención de lesiones:</strong> Sistemas de IA pueden predecir posibles lesiones analizando patrones de movimiento y fatiga muscular, permitiendo a los entrenadores ajustar las cargas de trabajo.</p>
+                
+                <p>Estas tecnologías no solo están mejorando el rendimiento deportivo, sino que también están ayudando a prolongar las carreras de los atletas profesionales.</p>
+            </div>
+        </article>
+    </div>
+    
+    <footer>
+        <h4>© 2025 Noticiero de Deportes - Todos los derechos reservados</h4>
+        <p>CONTACTANOS AL notideport@gmail.com - 4464258678</p>
+    </footer>
+</body>
+</html>
