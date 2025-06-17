@@ -169,6 +169,25 @@
             margin-bottom: 0;
         }
         
+    /* Estilo para los círculos de toque */
+    .toque-efecto {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(76, 201, 240, 0.6);
+      pointer-events: none;
+      animation: expandir 0.5s ease-out forwards;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+
+    @keyframes expandir {
+      to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(5);
+      }
+    }
         /* Responsive */
         @media (max-width: 768px) {
             header h1 {
@@ -203,7 +222,7 @@
 </head>
 <body>
     <header>
-        <h1>Novedades - Noticiero de Deportes</h1>
+        <h1>Novedades - ZONA DEPORTIVA</h1>
     </header>
     
     <nav>
@@ -213,13 +232,14 @@
         <a href="tendencias.html">Tendencias</a>
         <a href="ultima hora.html">Última Hora</a>             
         <a href="mas relevante.html">Más Relevante</a>
+        <a href="contacto.html">Contacto</a>
     </nav>
     
     <div class="contenido-principal">
         <article class="novedad">
             <div class="novedad-contenido">
                 <h2>Thomas Müller podría dejar el Bayern de Munich al finalizar la temporada</h2>
-                <img src="F:\Inicio\imagenes\novedadfutbol.jpeg" alt="Thomas Müller del Bayern Munich" class="imagen-novedad">
+                <img src="imagenes\thomas.jpg" alt="Thomas Müller del Bayern Munich" class="imagen-novedad">
                 
                 <div class="destacado">
                     El emblemático jugador del Bayern Munich podría no renovar su contrato al finalizar la temporada, según fuentes cercanas al club.
@@ -236,7 +256,7 @@
         <article class="novedad">
             <div class="novedad-contenido">
                 <h2>Calendario de Competiciones 2024</h2>
-                
+                <img src="imagenes\calendario.jpg" width="250" height="250">
                 <div class="destacado">
                     La FIFA anuncia las fechas oficiales para los próximos torneos internacionales, incluyendo la Copa Mundial de Clubes 2025.
                 </div>
@@ -255,7 +275,7 @@
         <article class="novedad">
             <div class="novedad-contenido">
                 <h2>Avances Tecnológicos en el Deporte</h2>
-                
+                <img src="imagenes\tecnologia.jpg" width="300" height="250">
                 <div class="destacado">
                     La inteligencia artificial y el análisis de datos están revolucionando la forma en que los atletas entrenan y compiten.
                 </div>
@@ -277,5 +297,26 @@
         <h4>© 2025 Noticiero de Deportes - Todos los derechos reservados</h4>
         <p>CONTACTANOS AL notideport@gmail.com - 4464258678</p>
     </footer>
+    <script>
+        //toques
+        function crearToque(x, y) {
+          const circulo = document.createElement("div");
+          circulo.classList.add("toque-efecto");
+          circulo.style.left = `${x}px`;
+          circulo.style.top = `${y}px`;
+          document.body.appendChild(circulo);
+          setTimeout(() => circulo.remove(), 500);
+        }
+    
+        // Aplicar efecto sin interferir con enlaces
+        document.addEventListener("click", (e) => {
+          crearToque(e.clientX, e.clientY);
+        }, true);
+    
+        document.addEventListener("touchstart", (e) => {
+          const touch = e.touches[0];
+          crearToque(touch.clientX, touch.clientY);
+        }, { passive: true });
+      </script>
 </body>
 </html>

@@ -121,7 +121,7 @@
         }
         
         .seccion-boxeo p:before {
-            content: "🥊";
+            content: "";
             position: absolute;
             left: -5px;
         }
@@ -156,6 +156,26 @@
             margin-bottom: 0;
         }
         
+    /* Estilo para los círculos de toque */
+    .toque-efecto {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(76, 201, 240, 0.6);
+      pointer-events: none;
+      animation: expandir 0.5s ease-out forwards;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+
+    @keyframes expandir {
+      to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(5);
+      }
+    }
+
         /* Responsive */
         @media (max-width: 768px) {
             header h1 {
@@ -195,13 +215,16 @@
         <a href="tendencias.html">Tendencias</a>
         <a href="ultima hora.html">Última Hora</a>             
         <a href="mas relevante.html">Más Relevante</a>
+        <a href="contacto.html">Contacto</a>
     </nav>
     
     <div class="contenido-principal">
         <article class="seccion-boxeo">
             <h2>Resultados Recientes</h2>
+            <div style="text-align: center;">
+             <img src="imagenes\gana el canelo alvares.jpeg" width="350" height="250" alt="boxeo">
             <p>Canelo Álvarez gana por decisión unánime contra Jermall Charlo en un combate que duró los 12 rounds completos.</p>
-            
+            </div>
             <div class="destacado">
                 Tyson Fury vence a Oleksandr Usyk en una épica batalla de 12 rounds que mantuvo a los espectadores al borde de sus asientos.
             </div>
@@ -211,9 +234,26 @@
 
         <article class="seccion-boxeo">
             <h2>Noticias Destacadas</h2>
-            <p>¡Jake Paul desafía a Conor McGregor a una pelea histórica que podría realizarse a finales de 2024!</p>
+            <p>¡Jake Paul desafía a Conor McGregor a una pelea histórica que podría realizarse a finales de 2024!
+                JAKE PAUL SUPERA A MIKE TYSON: ¿PRÓXIMO OBJETIVO, CONOR MCGREGOR?
+             El 16 de noviembre, Jake Paul sorprendió al mundo al vencer a Mike Tyson por decisión unánime en un combate que no 
+             cumplió con las expectativas previas. A pesar de las especulaciones sobre un posible regreso a su mejor nivel por parte de Tyson,
+             Paul dominó claramente el cuadrilátero, con tarjetas de 80-72, 79-73 y 79-73 a su favor, dejando en claro su potencial como boxeador profesional.
+
+            Con esta victoria, Jake Paul ha consolidado su lugar como una de las figuras más polémicas y mediáticas del boxeo, y parece que no tiene intenciones 
+            de frenar su impulso. Según diversos reportes, Paul estaría ya concentrado en su próximo reto: un combate con Conor McGregor, el irlandés multicampeón de UFC.
+            </p>
             
-            <p>El mexicano Isaac "Pitbull" Cruz busca el título mundial de peso ligero en su próximo combate programado para noviembre.</p>
+            <p>El mexicano Isaac "Pitbull" Cruz busca el título mundial de peso ligero en su próximo combate programado para noviembre,
+                enfrentará al argentino Matías Romero en el duelo coestelar de una función este próximo sábado 
+                13 de marzo, en la “Mohegan Sun Arena”, de esta localidad de Connecticut.
+                Cruz (20-1-1, 15 KOs), quien fue programado originalmente contra un adversario español regresa al ring tras la actuación más impresionante de su carrera.
+                Ello sucedió en el primer round de su pelea ante el duro y muy cotizado contendiente mundial Diego Magdaleno, en octubre pasado.
+                Originario de la Ciudad de México, Isaac “Pitbull” Cruz, de 22 años, busca otro importante triunfo en peso ligero para acercarse a una oportunidad por 
+                un título mundial.
+                Cruz se convirtió en profesional en 2015 a la edad de 16 años y perdió por única vez un año después, pero su estilo agresivo lo ha mantenido invicto 
+                durante los últimos cinco años.
+            </p>
             
             <div class="destacado">
                 Anthony Joshua y Deontay Wilder finalmente firmaron para enfrentarse en diciembre en Arabia Saudita, en uno de los combates más esperados del año.
@@ -222,17 +262,40 @@
             <p>La Asociación Mundial de Boxeo anuncia nuevas regulaciones para proteger la salud de los boxeadores.</p>
         </article>
         
+        <a href="eventos.html" style="text-decoration: none; color: inherit;">
         <article class="seccion-boxeo">
             <h2>Próximos Eventos</h2>
             <p>15 Octubre: Terence Crawford vs. Errol Spence Jr. - Revancha por el título welter unificado.</p>
             <p>28 Octubre: Ryan García regresa al ring contra el excampeón mundial Javier Fortuna.</p>
             <p>10 Noviembre: Combate femenino por el título entre Amanda Serrano y Katie Taylor II.</p>
         </article>
+        </a>
     </div>
     
     <footer>
         <h4>Noticiero de Deportes - Todos los derechos reservados</h4>
         <p>CONTACTANOS AL notideport@gmail.com - 4464258678</p>
     </footer>
+    <script>
+        //toques
+        function crearToque(x, y) {
+          const circulo = document.createElement("div");
+          circulo.classList.add("toque-efecto");
+          circulo.style.left = `${x}px`;
+          circulo.style.top = `${y}px`;
+          document.body.appendChild(circulo);
+          setTimeout(() => circulo.remove(), 500);
+        }
+    
+        // Aplicar efecto sin interferir con enlaces
+        document.addEventListener("click", (e) => {
+          crearToque(e.clientX, e.clientY);
+        }, true);
+    
+        document.addEventListener("touchstart", (e) => {
+          const touch = e.touches[0];
+          crearToque(touch.clientX, touch.clientY);
+        }, { passive: true });
+      </script>
 </body>
 </html>

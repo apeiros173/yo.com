@@ -121,7 +121,7 @@
         }
         
         .seccion-beisbol p:before {
-            content: "⚾";
+            content: "";
             position: absolute;
             left: -5px;
         }
@@ -165,6 +165,26 @@
             margin-bottom: 0;
         }
         
+    /* Estilo para los círculos de toque */
+    .toque-efecto {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(76, 201, 240, 0.6);
+      pointer-events: none;
+      animation: expandir 0.5s ease-out forwards;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+
+    @keyframes expandir {
+      to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(5);
+      }
+    }
+
         /* Responsive */
         @media (max-width: 768px) {
             header h1 {
@@ -204,6 +224,7 @@
         <a href="tendencias.html">Tendencias</a>
         <a href="ultima hora.html">Última Hora</a>             
         <a href="mas relevante.html">Más Relevante</a>
+        <a href="contacto.html">Contacto</a>
     </nav>
     
     <div class="contenido-principal">
@@ -216,7 +237,7 @@
                 La familia del exjugador de béisbol Brett Gardner, conocido por su destacada carrera con los New York Yankees, enfrenta una tragedia tras la repentina muerte de su hijo menor, Miller Gardner, de 14 años.
             </div>
             
-            <img src="F:\Inicio\imagenes\beisbol.avif" alt="Tragedia en la familia Gardner" class="imagen-noticia">
+            <img src="imagenes\hijo brett.jpg" width="450"  height="350"   alt="Tragedia en la familia Gardner" class="imagen-noticia">
             
             <p>Según informó ABC News, el joven murió mientras dormía el pasado viernes 21 de marzo, durante unas vacaciones familiares en Costa Rica. El suceso ocurrió después de que Miller y otros miembros de la familia presentaran síntomas de enfermedad.</p>
             
@@ -237,11 +258,47 @@
             
             <p>Fernando Tatis Jr. regresa del suspenso y conecta jonrón en su primer juego de vuelta con los Padres.</p>
         </article>
-    </div>
-    
-    <footer>
+    <section>
+    <article class="seccion-beisbol">
+
+        <h1>Rafael Devers se va a los Giants</h1>
+            <div style="text-align: center;">
+        <img src="imagenes\rafa.jpg" width="400" height="350">
+        </div>
+<p>
+    Los Red Sox sorprendieron al traspasar a su 
+    estrella Rafael Devers a los San Francisco Giants. A cambio recibieron a Jordan Hicks, Kyle Harrison y dos prospecto
+</p>
+        
+      </div>
+      </div>
+    </article>
+    </section>
+
+        <footer>
         <h4>Noticiero de Deportes - Todos los derechos reservados</h4>
         <p>CONTACTANOS AL notideport@gmail.com - 4464258678</p>
     </footer>
+    <script>
+        //toques
+        function crearToque(x, y) {
+          const circulo = document.createElement("div");
+          circulo.classList.add("toque-efecto");
+          circulo.style.left = `${x}px`;
+          circulo.style.top = `${y}px`;
+          document.body.appendChild(circulo);
+          setTimeout(() => circulo.remove(), 500);
+        }
+    
+        // Aplicar efecto sin interferir con enlaces
+        document.addEventListener("click", (e) => {
+          crearToque(e.clientX, e.clientY);
+        }, true);
+    
+        document.addEventListener("touchstart", (e) => {
+          const touch = e.touches[0];
+          crearToque(touch.clientX, touch.clientY);
+        }, { passive: true });
+      </script>
 </body>
 </html>

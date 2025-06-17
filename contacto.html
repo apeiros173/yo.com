@@ -363,135 +363,124 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>ZONA DEPORTIVA</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulario de Contacto</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f2f4f6;
+    }
+    .form-container {
+      max-width: 720px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+    }
+  </style>
+</head>
+
+<header>
+        <h1>Sección de Contacto</h1>
     </header>
     
-    <nav class="navbar">
-        <a href="Index.html">Inicio</a>
+    <nav>
+        <a href="index.html">Inicio</a>
         <a href="deportes.html">Deportes</a>
         <a href="novedades.html">Novedades</a>
         <a href="tendencias.html">Tendencias</a>
         <a href="ultima hora.html">Última Hora</a>             
-        <a href="mas relevante.html">Más Relevante</a> 
-        <a href="contacto.html">Contacto</a></li>
+        <a href="mas relevante.html">Más Relevante</a>
+        <a href="contacto.html">Contacto</a>
     </nav>
-    <div class="container">
-        <section>
-            <article class="noticia-destacada">
-                <p>Bienvenidos a ZONA DEPORTIVA , tu espacio deportivo favorito
-Aquí vive la pasión por el deporte. Desde las hazañas más emocionantes del fútbol, el boxeo, 
-el básquetbol y el automovilismo, hasta las historias que inspiran dentro y fuera 
-del campo, te traemos lo mejor del mundo deportivo en un solo lugar. Noticias al instante, 
-análisis profundos, entrevistas exclusivas y cobertura de eventos nacionales e internacionales. 
-Si vibras con la adrenalina del juego, este es tu sitio.
-</p>
-                <h1>Lo más destacado</h1>
-                <img src="imagenes\Captura de pantalla 2025-06-16 163851.png" alt="Noticia destacada">
-                <h2>Resultados Recientes</h2>
-                <p>Anotó un gol al poco tiempo de entrar al partido</p>
-                <p>Consulta los últimos marcadores de las ligas más importantes del mundo.</p>
-                
-                <h2>Chelsea FC reporta beneficios antes de impuestos de 128,4 millones de libras</h2>
-                <p>El Chelsea FC ha anunciado beneficios antes de impuestos (más de 153 millones de euros) para el ejercicio que terminó en Junio de 2024,
-                un contraste significativo con las pérdidas de 200 millones de euros del año anterior. Un factor clave en estos resultados ha sido la venta del equipo femenino del Chelsea, que se reestructuró
-                para funcionar como una entidad separada, generando "beneficios por enajenación de filiales" valorados en cerca de 200 millones de 
-                libras por la "venta de registros de jugadores" y aumentos en ingresos por partidos y comerciales. Mientras la Premier League ha considerado
-                esta estrategia dentro de su normativa, la UEFA, con reglas más estrictas, podría evaluar medidas adicionales. La clasificación para 
-                la próxima Champions League es crucial para mantener la estabilidad financiera del club.</p>
-            </article>
-        </section>
-                <section>
-                <article class="noticia-destacada">
+    
+  <main class="container my-5">
+    <div class="form-container">
+      <h2 class="text-center mb-3">Contáctanos</h2>
+      <p class="text-center">¿Tienes preguntas, sugerencias o comentarios? ¡Escríbenos!</p>
 
-             <h2>Aleksandar Mitrović amenaza al Real Madrid en el Mundial de Clubes</h2>
-                <img src="imagenes\alex.jpeg" width="300" height="200"   alt="noticia">
-                <p>
-                    El delantero serbio del Al-Hilal, con una impresionante trayectoria 
-                    en Fulham y su selección (63 goles), será el gran rival a vencer para el Madrid 
-                    en el torneo que inicia el 18 de junio 
-                </p>
-             </article>
-        </section>
-                        <section>
-                <article class="noticia-destacada">
+      <form action="https://formspree.io/f/xgvyvkpe" method="POST" class="needs-validation" novalidate>
+        <div class="row g-4">
 
-             <h2>Matías Almeyda, nuevo entrenador del Sevilla</h2>
-                <img src="imagenes\silmal.jpeg" width="350" height="250 " alt="noticia">
-                <p>
-                El exfutbolista argentino, sin experiencia previa en la liga española,
-                ha firmado por tres años con el Sevilla. Su objetivo será reconstruir 
-                el equipo y aliviar la masa salarial
-                </p>
-             </article>
-        </section>
+          <!-- Nombre -->
+          <div class="col-md-6">
+            <label for="name" class="form-label">Nombre completo <span class="text-danger">*</span></label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="nombre"
+              placeholder="Ej. Ana Gómez"
+              required
+              maxlength="100"
+              autocomplete="name"
+              autofocus
+            >
+            <div class="invalid-feedback">Por favor, ingresa tu nombre completo.</div>
+          </div>
+
+          <!-- Correo del remitente -->
+          <div class="col-md-6">
+            <label for="email" class="form-label">Correo electrónico <span class="text-danger">*</span></label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="correo@ejemplo.com"
+              required
+              maxlength="100"
+              autocomplete="email"
+            >
+            <div class="invalid-feedback">Por favor, ingresa un correo válido.</div>
+          </div>
+
+          <!-- Mensaje -->
+          <div class="col-12">
+            <label for="message" class="form-label">Mensaje <span class="text-danger">*</span></label>
+            <textarea
+              class="form-control"
+              id="message"
+              name="mensaje"
+              rows="5"
+              placeholder="Escribe tu mensaje aquí..."
+              required
+              maxlength="1000"
+            ></textarea>
+            <div class="invalid-feedback">Por favor, escribe tu mensaje.</div>
+          </div>
+
+          <!-- Botón de envío -->
+          <div class="col-12 d-grid">
+            <button type="submit" class="btn btn-success btn-lg">Enviar mensaje</button>
+          </div>
+
+        </div>
+      </form>
     </div>
-    </div>
-    
-    <footer>
-        <div class="redes-sociales">
-            <h3>Síguenos en:</h3>
-            <ul class="redes-lista">
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">YouTube</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">TikTok</a></li>
-                <li><a href="#">Suscríbete al Newsletter</a></li>
-            </ul>
-        </div>
-        
-        <div class="contacto">
-            <p>Contacto@notideport.com.mx | Tel: +52 446 425 8678</p>
-        </div>
-        
-        <div class="enlaces-legales">
-            <a href="#">Derechos de réplica</a>
-            <a href="#">Código de Ética</a>
-            <a href="#">Términos y Condiciones</a>
-            <a href="#">Aviso de Privacidad</a>
-            <a href="#">Sala de Prensa</a>
-        </div>
-        
-        <div class="derechos">
-            <p>Derechos reservados © 2025 Noticiero de Deportes</p>
-        </div>
-    </footer>
-     <script>
-   // Efecto de toque mejorado
-  function crearToque(x, y) {
-    const circulo = document.createElement("div");
-    circulo.classList.add("toque-efecto");
-    circulo.style.left = `${x}px`;
-    circulo.style.top = `${y}px`;
-    document.body.appendChild(circulo);
-    
-    // Eliminar después de la animación
-    circulo.addEventListener('animationend', () => {
-      circulo.remove();
-    });
-  }
+  </main>
 
-  // Controlador para clics (ratón)
-  document.addEventListener("click", (e) => {
-    if (e.target.tagName === 'A' || e.target.closest('a')) return;
-    crearToque(e.clientX, e.clientY);
-  });
+  <!-- Scripts Bootstrap + Validación -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Validación Bootstrap personalizada
+    (() => {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>
 
-  // Controlador mejorado para toques
-  document.addEventListener("touchstart", (e) => {
-    const touch = e.touches[0];
-    crearToque(touch.clientX, touch.clientY);
-    
-    // Permitir scroll pero mantener el efecto
-    if (e.cancelable) {
-      e.preventDefault();
-    }
-  }, { passive: false }); // Cambiado a false para permitir preventDefault
-
-  // Manejar el movimiento para no interferir con el scroll
-  document.addEventListener("touchmove", (e) => {
-    // Puedes añadir lógica adicional aquí si necesitas
-  }, { passive: true });
-      </script>
 </body>
 </html>

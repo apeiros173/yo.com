@@ -172,6 +172,26 @@
             margin-bottom: 0;
         }
         
+    /* Estilo para los círculos de toque */
+    .toque-efecto {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(76, 201, 240, 0.6);
+      pointer-events: none;
+      animation: expandir 0.5s ease-out forwards;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+
+    @keyframes expandir {
+      to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(5);
+      }
+    }
+
         /* Responsive */
         @media (max-width: 768px) {
             header h1 {
@@ -208,11 +228,15 @@
         <a href="tendencias.html">Tendencias</a>
         <a href="ultima hora.html">Última Hora</a>            
         <a href="mas relevante.html">Más Relevante</a>
+        <a href="contacto.html">Contacto</a>
+
     </nav>
     
     <main class="contenido-principal">
         <article class="noticia">
-            <img src="https://via.placeholder.com/600x400?text=Messi+Argentina" alt="Messi con Argentina" class="noticia-imagen">
+            <div style="text-align: center;">
+            <img src="imagenes\messi regresa.jpeg" alt="Messi con Argentina">
+            </div>
             <div class="noticia-contenido">
                 <span class="etiqueta">Fútbol</span>
                 <h2>El regreso de Messi a Argentina</h2>
@@ -221,7 +245,9 @@
         </article>
 
         <article class="noticia">
-            <img src="https://via.placeholder.com/600x400?text=Stephen+Curry" alt="Stephen Curry" class="noticia-imagen">
+             <div style="text-align: center;">
+            <img src="imagenes\stephen-curry.jpg" width="300" height="200" alt="Stephen Curry">
+        </div>
             <div class="noticia-contenido">
                 <span class="etiqueta">Básquetbol</span>
                 <h2>Récord histórico en la NBA</h2>
@@ -230,7 +256,9 @@
         </article>
 
         <article class="noticia">
-            <img src="https://via.placeholder.com/600x400?text=Atletismo" alt="Atletismo" class="noticia-imagen">
+            <div style="text-align: center;">
+            <img src="imagenes\velocista.jpeg" width="250px"  alt="Atletismo" class="noticia-imagen">
+            </div>
             <div class="noticia-contenido">
                 <span class="etiqueta">Atletismo</span>
                 <h2>Nuevo récord mundial en 100m</h2>
@@ -239,7 +267,7 @@
         </article>
 
         <article class="noticia">
-            <img src="https://via.placeholder.com/600x400?text=Canelo+Álvarez" alt="Canelo Álvarez" class="noticia-imagen">
+            <img src="imagenes\images.jpeg"  width="100px" alt="Canelo Álvarez" class="noticia-imagen">
             <div class="noticia-contenido">
                 <span class="etiqueta">Boxeo</span>
                 <h2>Canelo Álvarez listo para su próxima pelea</h2>
@@ -252,5 +280,26 @@
         <h4>© 2025 Noticiero de Deportes - Todos los derechos reservados</h4>
         <p>CONTACTANOS AL notideport@gmail.com - 4464258678</p>
     </footer>
+    <script>
+        //toques
+        function crearToque(x, y) {
+          const circulo = document.createElement("div");
+          circulo.classList.add("toque-efecto");
+          circulo.style.left = `${x}px`;
+          circulo.style.top = `${y}px`;
+          document.body.appendChild(circulo);
+          setTimeout(() => circulo.remove(), 500);
+        }
+    
+        // Aplicar efecto sin interferir con enlaces
+        document.addEventListener("click", (e) => {
+          crearToque(e.clientX, e.clientY);
+        }, true);
+    
+        document.addEventListener("touchstart", (e) => {
+          const touch = e.touches[0];
+          crearToque(touch.clientX, touch.clientY);
+        }, { passive: true });
+      </script>
 </body>
 </html>

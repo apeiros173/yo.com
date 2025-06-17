@@ -363,6 +363,25 @@
     </style>
 </head>
 <body>
+    <!-- Botón para el menú lateral -->
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <!-- Barra lateral -->
+    <div class="sidebar" id="sidebar">
+        <h2>Última Hora</h2>
+        <ul>
+            <li><a href="deportes.html">Deportes</a></li>
+            <li><a href="mas relevante.html">Mas relevante</a></li>
+            <li><a href="novedades.html">Novedades</a></li>
+            <li><a href="tendencias.html">Tendencias</a></li>
+            <li><a href="ultima hora.html">Ultima hora</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </div>
+
+    <!-- Overlay para cerrar el menú -->
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
     <header>
         <h1>ZONA DEPORTIVA</h1>
     </header>
@@ -376,23 +395,23 @@
         <a href="mas relevante.html">Más Relevante</a> 
         <a href="contacto.html">Contacto</a></li>
     </nav>
+    
     <div class="container">
         <section>
             <article class="noticia-destacada">
-                <p>Bienvenidos a ZONA DEPORTIVA , tu espacio deportivo favorito
-Aquí vive la pasión por el deporte. Desde las hazañas más emocionantes del fútbol, el boxeo, 
-el básquetbol y el automovilismo, hasta las historias que inspiran dentro y fuera 
-del campo, te traemos lo mejor del mundo deportivo en un solo lugar. Noticias al instante, 
-análisis profundos, entrevistas exclusivas y cobertura de eventos nacionales e internacionales. 
-Si vibras con la adrenalina del juego, este es tu sitio.
-</p>
                 <h1>Lo más destacado</h1>
-                <img src="imagenes\Captura de pantalla 2025-06-16 163851.png" alt="Noticia destacada">
+                <img src="imagenes\ultimo gol.jpg" width="450" height="450" alt="Noticia destacada">
                 <h2>Resultados Recientes</h2>
                 <p>Anotó un gol al poco tiempo de entrar al partido</p>
                 <p>Consulta los últimos marcadores de las ligas más importantes del mundo.</p>
-                
+            <br>
+            </article>
+        </section>
+        <section>
+            <article class="noticia-destacada">
+              
                 <h2>Chelsea FC reporta beneficios antes de impuestos de 128,4 millones de libras</h2>
+                  <img src="imagenes\chelsea.jpg" width="450" height="450" alt="Noticia destacada">
                 <p>El Chelsea FC ha anunciado beneficios antes de impuestos (más de 153 millones de euros) para el ejercicio que terminó en Junio de 2024,
                 un contraste significativo con las pérdidas de 200 millones de euros del año anterior. Un factor clave en estos resultados ha sido la venta del equipo femenino del Chelsea, que se reestructuró
                 para funcionar como una entidad separada, generando "beneficios por enajenación de filiales" valorados en cerca de 200 millones de 
@@ -401,31 +420,15 @@ Si vibras con la adrenalina del juego, este es tu sitio.
                 la próxima Champions League es crucial para mantener la estabilidad financiera del club.</p>
             </article>
         </section>
-                <section>
-                <article class="noticia-destacada">
-
-             <h2>Aleksandar Mitrović amenaza al Real Madrid en el Mundial de Clubes</h2>
-                <img src="imagenes\alex.jpeg" width="300" height="200"   alt="noticia">
-                <p>
-                    El delantero serbio del Al-Hilal, con una impresionante trayectoria 
-                    en Fulham y su selección (63 goles), será el gran rival a vencer para el Madrid 
-                    en el torneo que inicia el 18 de junio 
-                </p>
-             </article>
+        <section>
+            <article class="noticia-destacada">
+                <h1>Crecimiento explosivo del pádel y deportes híbridos</h1>
+                <img src="imagenes\teniss.jpg" width="550" height="450 ">
+<i><p>La Paquito Navarro Academy lanzará en Madrid 
+    (septiembre 2025) un programa que combina formación académica con entrenamiento de alto rendimiento, 
+    reflejando el boom global del pádel con más de 2 M jugadores en 110 países</p></i>
+            </article>
         </section>
-                        <section>
-                <article class="noticia-destacada">
-
-             <h2>Matías Almeyda, nuevo entrenador del Sevilla</h2>
-                <img src="imagenes\silmal.jpeg" width="350" height="250 " alt="noticia">
-                <p>
-                El exfutbolista argentino, sin experiencia previa en la liga española,
-                ha firmado por tres años con el Sevilla. Su objetivo será reconstruir 
-                el equipo y aliviar la masa salarial
-                </p>
-             </article>
-        </section>
-    </div>
     </div>
     
     <footer>
@@ -494,4 +497,4 @@ Si vibras con la adrenalina del juego, este es tu sitio.
   }, { passive: true });
       </script>
 </body>
-</html>
+</html> 

@@ -178,6 +178,26 @@
             margin-bottom: 0;
         }
         
+    /* Estilo para los círculos de toque */
+    .toque-efecto {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(76, 201, 240, 0.6);
+      pointer-events: none;
+      animation: expandir 0.5s ease-out forwards;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+
+    @keyframes expandir {
+      to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(5);
+      }
+    }
+
         /* Responsive */
         @media (max-width: 768px) {
             header h1 {
@@ -212,7 +232,7 @@
 </head>
 <body>
     <header>
-        <h1>Sección de Voleibol</h1>
+        <h1>Voleibol</h1>
     </header>
     
     <nav>
@@ -222,6 +242,7 @@
         <a href="tendencias.html">Tendencias</a>
         <a href="ultima hora.html">Última Hora</a>             
         <a href="mas relevante.html">Más Relevante</a>
+        <a href="contacto.html">Contacto</a>
     </nav>
     
     <div class="contenido-principal">
@@ -281,5 +302,26 @@
         <h4>© 2025 Noticiero de Deportes - Todos los derechos reservados</h4>
         <p>CONTACTANOS AL notideport@gmail.com - 4464258678</p>
     </footer>
+    <script>
+        //toques
+        function crearToque(x, y) {
+          const circulo = document.createElement("div");
+          circulo.classList.add("toque-efecto");
+          circulo.style.left = `${x}px`;
+          circulo.style.top = `${y}px`;
+          document.body.appendChild(circulo);
+          setTimeout(() => circulo.remove(), 500);
+        }
+    
+        // Aplicar efecto sin interferir con enlaces
+        document.addEventListener("click", (e) => {
+          crearToque(e.clientX, e.clientY);
+        }, true);
+    
+        document.addEventListener("touchstart", (e) => {
+          const touch = e.touches[0];
+          crearToque(touch.clientX, touch.clientY);
+        }, { passive: true });
+      </script>
 </body>
 </html>

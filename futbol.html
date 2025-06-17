@@ -13,25 +13,20 @@
         }
         
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
-        
-        /* Header estilo periodístico */
         header {
-            background-color: #1a1a2e;
-            color: #fff;
-            padding: 25px 0;
+            background-image: url('imagenes\fut.jpg'); /* Cambia esta ruta por la de tu imagen */
+            background-size: cover;
+            background-position: center;
+            height: 400px; /* Ajusta la altura según lo necesites */
+            color: rgba(205, 205, 205, 0.305);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            border-bottom: 3px solid #e63946;
-            position: relative;
-            overflow: hidden;
         }
-        
         header h1 {
             margin: 0;
             font-size: 2.8em;
@@ -50,7 +45,7 @@
         nav {
             display: flex;
             justify-content: center;
-            background-color: #16213e;
+            background-color: #127220cd;
             padding: 15px 0;
             position: sticky;
             top: 0;
@@ -74,7 +69,7 @@
         
         nav a:hover {
             color: #4cc9f0;
-            background: rgba(76, 201, 240, 0.1);
+            background: rgba(35, 92, 205, 0.841);
         }
         
         nav a:after {
@@ -104,8 +99,9 @@
             margin-bottom: 40px;
             padding: 30px;
             border-radius: 4px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-            border-left: 5px solid #e63946;
+            box-shadow: 0 3px 15px rgba(136, 67, 188, 0.71);
+            border-bottom: 3px solid #288a2d;
+            border-left: 5px solid ;
         }
         
         .noticia-destacada h2 {
@@ -125,7 +121,7 @@
         
         .noticia-destacada p:first-of-type {
             font-weight: 500;
-            color: #444;
+            color: #000000d3;
         }
         
         /* Separador estilizado */
@@ -136,25 +132,24 @@
         }
         
         .separador:after {
-            content: "⚽";
             position: absolute;
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
             background: #f5f5f5;
             padding: 0 15px;
-            color: #e63946;
+            color: #288a2d;
             font-size: 1.5em;
         }
         
         /* Footer profesional */
         footer {
-            background-color: #1a1a2e;
+            background-color: #1a712e;
             color: #fff;
             padding: 40px 0;
             text-align: center;
             margin-top: 50px;
-            border-top: 3px solid #e63946;
+            border-top: 3px solid #288a2d;
         }
         
         footer h4 {
@@ -168,7 +163,27 @@
             font-size: 1em;
             margin-bottom: 0;
         }
-        
+       
+    /* Estilo para los círculos de toque */
+    .toque-efecto {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(24, 101, 2, 0.747);
+      pointer-events: none;
+      animation: expandir 0.5s ease-out forwards;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+
+    @keyframes expandir {
+      to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(5);
+      }
+    }
+ 
         /* Responsive */
         @media (max-width: 768px) {
             header h1 {
@@ -208,6 +223,7 @@
         <a href="tendencias.html">Tendencias</a>
         <a href="ultima hora.html">Última Hora</a>             
         <a href="mas relevante.html">Más Relevante</a>
+        <a href="contacto.html">Contacto</a>
     </nav>
     
     <div class="contenido-principal">
@@ -227,6 +243,13 @@
             
             <h2>Manchester City continúa su dominio en la Premier League</h2>
             <p>El Manchester City sigue demostrando su hegemonía en la Premier League inglesa, manteniendo una racha imparable que lo consolida como uno de los equipos más dominantes de Europa en los últimos años.</p>
+           <p>Los dirigidos por Pep Guardiola buscan convertirse en uno de los equipos de época en el campeonato inglés y es por eso que están decididos a repetir lo que lograron la temporada pasada. Con apenas cinco títulos de Liga, 
+            el City quiere convertir en costumbre la consecución de títulos, pues no han sido capaces de mantener la hegemonía sobre los otros grandes del certamen.
+            Liverpool llega reforzado y con hambre de triunfo .Los finalistas de la pasada edición de la Champions League están dispuestos a todo para poder conseguir 
+           un título de la Premier League tras poco menos de 28 años de no hacerlo, por lo que llegan necesitados de hacerse 
+            con el tan ansiado trofeo. Los dirigidos por Jürgen Klopp no desaprovecharon la ventana de verano y realizaron compras 
+            esenciales para convertir a los Reds en uno de los clubes más temidos,
+            hoy en día, en el orbe, tras reforzar, especialmente, la zona baja del terreno de juego.</p>      
         </article>
     </div>
     
@@ -234,5 +257,26 @@
         <h4>© 2025 Noticiero de Deportes - Todos los derechos reservados</h4>
         <p>CONTACTANOS AL notideport@gmail.com - 4464258678</p>
     </footer>
+    <script>
+        //toques
+        function crearToque(x, y) {
+          const circulo = document.createElement("div");
+          circulo.classList.add("toque-efecto");
+          circulo.style.left = `${x}px`;
+          circulo.style.top = `${y}px`;
+          document.body.appendChild(circulo);
+          setTimeout(() => circulo.remove(), 500);
+        }
+    
+        // Aplicar efecto sin interferir con enlaces
+        document.addEventListener("click", (e) => {
+          crearToque(e.clientX, e.clientY);
+        }, true);
+    
+        document.addEventListener("touchstart", (e) => {
+          const touch = e.touches[0];
+          crearToque(touch.clientX, touch.clientY);
+        }, { passive: true });
+      </script>
 </body>
 </html>

@@ -204,6 +204,26 @@
             margin-bottom: 0;
         }
         
+    /* Estilo para los círculos de toque */
+    .toque-efecto {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(76, 201, 240, 0.6);
+      pointer-events: none;
+      animation: expandir 0.5s ease-out forwards;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+
+    @keyframes expandir {
+      to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(5);
+      }
+    }
+
         /* Responsive */
         @media (max-width: 768px) {
             header h1 {
@@ -230,6 +250,7 @@
                 min-width: 160px;
             }
         }
+        
     </style>
 </head>
 <body>
@@ -253,6 +274,7 @@
         <a href="tendencias.html">Tendencias</a>
         <a href="ultima hora.html">Última Hora</a>
         <a href="mas relevante.html">Más Relevante</a>
+        <a href="contacto.html">Contacto</a>
     </nav>
     
     <section class="contenido">
@@ -261,6 +283,7 @@
                 <span class="etiqueta">Fútbol</span>
                 <h2>Resultados de la jornada</h2>
                 <p>Revive los momentos más emocionantes de la última fecha de la liga, con análisis detallados de cada encuentro y las posiciones actualizadas en la tabla.</p>
+                <img src="imagenes\fifa.avif"  width="70%" height="250px" alt=" ¡Encontraras aqui a tus equipos favoritos!" >
             </div>
         </article>
         
@@ -269,6 +292,7 @@
                 <span class="etiqueta">Tenis</span>
                 <h2>Novak Djokovic hace historia</h2>
                 <p>Djokovic gana su 24° Grand Slam y rompe otro récord más en un partido épico que duró más de 4 horas ante su principal rival.</p>
+            <img src="imagenes\24.jpg" width="300" height="200" alt="noticia">
             </div>
         </article>
         
@@ -277,6 +301,7 @@
                 <span class="etiqueta">Fórmula 1</span>
                 <h2>Verstappen domina la temporada</h2>
                 <p>El piloto de Red Bull sigue imparable y se lleva otra victoria en el Gran Premio, aumentando su ventaja en el campeonato mundial.</p>
+            <img src="imagenes\max.jpg" width="250" height="150" alt="noticia ">
             </div>
         </article>
         
@@ -285,6 +310,7 @@
                 <span class="etiqueta">Básquetbol</span>
                 <h2>La NBA se prepara para los playoffs</h2>
                 <p>Las últimas jornadas de la temporada regular definen los últimos clasificados a la postemporada más emocionante del baloncesto mundial.</p>
+            <img src="imagenes\playoffs.jpg" width="250" height="150">
             </div>
         </article>
         
@@ -293,14 +319,18 @@
                 <span class="etiqueta">Béisbol</span>
                 <h2>Temporada MLB en su punto álgido</h2>
                 <p>Los equipos se disputan la supremacía en ambas ligas con miras a la serie mundial que se avecina en los próximos meses.</p>
+            <img src="imagenes\mlb.jpg" width="250" height="150">
             </div>
         </article>
-        
+        <a href="controversia.html" style="text-decoration: none; color: inherit;">
         <article class="noticia">
             <div class="noticia-contenido">
                 <span class="etiqueta">Box</span>
-                <h2>Gran pelea mundial anunciada</h2>
-                <p>Los campeones de tres categorías diferentes se enfrentarán en un combate que promete ser histórico para el boxeo profesional.</p>
+                <h2>Controversia entre De La Hoya y Reynoso</h2>
+                <p>Óscar de la Hoya criticó a Eddy Reynoso tras el positivo por 
+                dopaje de Jaime Munguía y acusó al equipo Canelo de falta de ética 
+                deportiva y complicidad con figuras como Dana White </p>
+                <img src="imagenes\eddy.jpg" width="250" height="150">
             </div>
         </article>
     </section>
@@ -309,5 +339,26 @@
         <h4>© 2025 Noticiero de Deportes - Todos los derechos reservados</h4>
         <p>CONTACTANOS AL notideport@gmail.com - 4464258678</p>
     </footer>
+      <script>
+        //toques
+        function crearToque(x, y) {
+          const circulo = document.createElement("div");
+          circulo.classList.add("toque-efecto");
+          circulo.style.left = `${x}px`;
+          circulo.style.top = `${y}px`;
+          document.body.appendChild(circulo);
+          setTimeout(() => circulo.remove(), 500);
+        }
+    
+        // Aplicar efecto sin interferir con enlaces
+        document.addEventListener("click", (e) => {
+          crearToque(e.clientX, e.clientY);
+        }, true);
+    
+        document.addEventListener("touchstart", (e) => {
+          const touch = e.touches[0];
+          crearToque(touch.clientX, touch.clientY);
+        }, { passive: true });
+      </script>
 </body>
 </html>
